@@ -13,7 +13,7 @@ class Menu extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: _buildPizzas(),
+          children: pizzaData.map((pizzas) => MenuItem(pizza: pizzas,)).toList(),
         ),
       ),
     );
