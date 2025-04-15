@@ -11,10 +11,22 @@ class Menu extends StatelessWidget {
       appBar: AppBar(
         title: Text("Pizza Menu"),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: pizzaData.map((pizzas) => MenuItem(pizza: pizzas,)).toList(),
-        ),
+      body: Column(
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: pizzaData.map((pizzas) => MenuItem(pizza: pizzas,)).toList(),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: ElevatedButton(onPressed: (){},
+             child: Text("Order now!"),
+            ),
+          )
+        ],
       ),
     );
   }
