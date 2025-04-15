@@ -20,6 +20,7 @@ class Menu extends StatelessWidget {
   }
 
   List<MenuItem> _buildPizzas() {
+    //Pizza => MenuItem
     List<MenuItem> listaPizzas = [];
     for (var pizza in pizzaData) {
       listaPizzas.add(MenuItem(pizza: pizza));
