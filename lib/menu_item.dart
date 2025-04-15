@@ -43,7 +43,7 @@ class MenuItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "\$ ${pizza.price}",
+                    pizza.soldOut ? "soldout" : "\$ ${pizza.price}",
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black54,

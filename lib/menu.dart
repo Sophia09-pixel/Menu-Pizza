@@ -19,6 +19,7 @@ class Menu extends StatelessWidget {
     );
   }
 
+  //outra maneira de carregar as pizzas para MenuItem
   List<MenuItem> _buildPizzas() {
     //Pizza => MenuItem
     List<MenuItem> listaPizzas = [];
