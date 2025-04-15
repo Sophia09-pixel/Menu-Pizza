@@ -15,10 +15,15 @@ class MenuItem extends StatelessWidget {
         padding: const EdgeInsets.all(12.0), // espacamento dentro do card
         child: Row(
           children: [
-            Image.asset(
-              "images/${pizza.photoName}",
-              width: 100,
-              height: 100,
+            ColorFiltered(
+              colorFilter: pizza.soldOut ? 
+                ColorFilter.mode(Colors.grey, BlendMode.saturation) : 
+                ColorFilter.mode(Colors.transparent, BlendMode.saturation),
+              child: Image.asset(
+                "images/${pizza.photoName}",
+                width: 100,
+                height: 100,
+              ),
             ),
             SizedBox(
               width: 16,
