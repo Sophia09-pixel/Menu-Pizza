@@ -1,7 +1,11 @@
+// ignore_for_file: unnecessary_string_interpolations
+
 import 'package:flutter/material.dart';
+import 'package:pizza_menu/pizza_data.dart';
 
 class MenuItem extends StatelessWidget {
-  const MenuItem({super.key});
+  final Pizza pizza;
+  const MenuItem({super.key, required this.pizza});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +16,7 @@ class MenuItem extends StatelessWidget {
         child: Row(
           children: [
             Image.asset(
-              "images/margherita.jpg",
+              "images/${pizza.photoName}",
               width: 100,
               height: 100,
             ),
@@ -25,21 +29,21 @@ class MenuItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Pizza Margherita",
+                    "${pizza.name}",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    "Tomato and Muzarella",
+                    pizza.ingredients,
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black87,
                     ),
                   ),
                   Text(
-                    "10",
+                    "\$ ${pizza.price}",
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black54,
