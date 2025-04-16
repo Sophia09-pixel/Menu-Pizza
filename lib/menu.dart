@@ -16,19 +16,33 @@ class Menu extends StatelessWidget {
           Expanded(
             child: SingleChildScrollView(
               child: Column(
-                children: pizzaData.map((pizzas) => MenuItem(pizza: pizzas,)).toList(),
+                children: pizzaData
+                    .map((pizzas) => MenuItem(
+                          pizza: pizzas,
+                        ))
+                    .toList(),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: ElevatedButton(onPressed: (){},
-             child: Text("Order now!"),
-            ),
-          )
+          if (horarioFuncionamento())
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text("Order now!"),
+              ),
+            )
         ],
       ),
     );
+  }
+
+  bool horarioFuncionamento() {
+    var horarioInicio = 18;
+    var horarioFinal = 23;
+    var horaAtual = DateTime.now().hour;
+    
+    return horaAtual >= horarioInicio && horaAtual < horarioFinal;
   }
 
   //outra maneira de carregar as pizzas para MenuItem
